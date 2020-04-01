@@ -1,0 +1,55 @@
+<!-- pages/components/view/pages/progress/index.wxml -->
+<view class='container'>
+    <content-title name="Progress" describe="进度条">
+        <content-card l-content="content" name="基本使用方法">
+            <l-progress percent="20"></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50"></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="自定义宽度">
+            <l-progress percent="20"></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50" stroke-width='20'></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="设置圆角">
+            <l-progress percent="20" stroke-width='20' border-radius='8'></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50" stroke-width='20' border-radius='15'></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="已选进度条颜色">
+            <l-progress percent="20"></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50" active-color="red"></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="背景颜色">
+            <l-progress percent="20"></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50" background-color='#FF00FF'></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="显示数值">
+            <l-progress percent="20" show-info="{{true}}"></l-progress>
+            <l-progress percent="50" show-info="{{true}}" text-position="left"></l-progress>
+            <l-progress percent="50" show-info="{{true}}" text-color='red'></l-progress>
+        </content-card>
+        <content-card l-content="content" name="自定义head">
+            <l-progress>
+                <view slot='header' style="width:50rpx;height:50rpx;border-radius:50%;background-color:red;"></view>
+            </l-progress>
+            <view style="margin-top:40rpx;">
+                <l-progress percent="50" l-slot-class='slot-class'>
+                    <image src="imoji.jpg" slot='header' style="width:50rpx;height:50rpx;border-radius:50%;" />
+                </l-progress>
+            </view>
+            <view style="margin-top:40rpx;">
+                <l-progress percent="100">
+                    <view slot='header' style="width:50rpx;height:50rpx;background-color:green;"></view>
+                </l-progress>
+            </view>
+        </content-card>
+    </content-title>
+</view>

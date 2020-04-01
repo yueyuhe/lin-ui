@@ -1,0 +1,37 @@
+/* components/progress/index.wxss */
+@import "../../config/styles/_base.less";
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.progress {
+    position: relative;
+    width: 100%;
+}
+
+.percent {
+    position: absolute;
+    z-index: 1;
+}
+
+.active {
+    background-color: @progress-active-color;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+}
+
+.header {
+    position: absolute !important;
+    z-index: 2;
+}
+
+.slot {
+    position: absolute;
+    z-index: 2;
+}
