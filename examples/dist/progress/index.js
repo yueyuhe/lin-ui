@@ -2,11 +2,13 @@
 import {
   px2rpx
 } from '../utils/util.js'
+import validator from '../behaviors/validator';
 Component({
   /**
    * 组件的属性列表
    */
   externalClasses: ['l-class', 'l-text-class', 'l-slot-class'],
+  behaviors: [validator],
   properties: {
     percent: {
       type: Number,
@@ -33,7 +35,8 @@ Component({
     },
     textPosition: {
       type: String,
-      value: 'right'
+      value: 'right',
+      options: ['left', 'right']
     },
     slotWidth: {
       type: Number,
