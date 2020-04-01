@@ -7,7 +7,7 @@ Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-class', 'l-text-class', 'l-slot-class'],
+  externalClasses: ['l-class', 'l-text-class', 'l-slot-class', 'l-active-class', 'l-background-class'],
   behaviors: [validator],
   properties: {
     percent: {

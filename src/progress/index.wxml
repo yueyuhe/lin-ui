@@ -7,8 +7,8 @@
         <view class="slot l-slot-class" style="margin-left:{{margin_left}}rpx;margin-top:{{margin_top}}rpx">
             <slot name='header'></slot>
         </view>
-        <view class="percent {{activeColor?'':'active'}}" style="width:{{percent}}%;height:{{strokeWidth}}rpx;border-radius:{{borderRadius}}rpx;{{activeColor?'background-color:'+activeColor+';':''}}"></view>
-        <view class="background" style="height:{{strokeWidth}}rpx;border-radius:{{borderRadius}}rpx;background-color:{{backgroundColor}};"></view>
+        <view class="percent {{activeColor?'':'active'}} l-active-class" style="width:{{percent}}%;height:{{strokeWidth}}rpx;border-radius:{{borderRadius}}rpx;{{activeColor?'background-color:'+activeColor+';':''}}"></view>
+        <view class="background l-background-class" style="height:{{strokeWidth}}rpx;border-radius:{{borderRadius}}rpx;background-color:{{backgroundColor}};"></view>
     </view>
     <view class="text l-text-class" wx:if="{{showInfo && textPosition=='right'}}" style="color:{{textColor}};">
         {{percent}}%
