@@ -34,12 +34,12 @@ Component({
     // 单图显示模式
     singleMode: {
       type: String,
-      value: 'aspectFit',
+      value: 'aspectFit'
     },
     // 多图显示模式
     multipleMode: {
       type: String,
-      value: 'aspectFill',
+      value: 'aspectFill'
     },
     key: {
       type: String,
