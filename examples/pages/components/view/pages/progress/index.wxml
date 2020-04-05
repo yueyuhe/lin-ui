@@ -36,18 +36,18 @@
             <l-progress percent="50" show-info="{{true}}" text-position="left"></l-progress>
             <l-progress percent="50" show-info="{{true}}" text-color='red'></l-progress>
         </content-card>
-        <content-card l-content="content" name="自定义head">
+        <content-card l-content="content" name="自定义header">
             <l-progress>
-                <view slot='header' style="width:50rpx;height:50rpx;border-radius:50%;background-color:red;"></view>
+                <view slot='header' style="width:50rpx;height:50rpx;border-radius:50%;background-color:red;display:block;"></view>
             </l-progress>
             <view style="margin-top:40rpx;">
-                <l-progress percent="50" l-slot-class='slot-class'>
-                    <image src="imoji.jpg" slot='header' style="width:50rpx;height:50rpx;border-radius:50%;" />
+                <l-progress percent="50">
+                    <image src="imoji.jpg" slot='header' style="width:50rpx;height:50rpx;border-radius:50%;display:block;" />
                 </l-progress>
             </view>
             <view style="margin-top:40rpx;">
                 <l-progress percent="100">
-                    <view slot='header' style="width:50rpx;height:50rpx;background-color:green;"></view>
+                    <view slot='header' style="width:50rpx;height:50rpx;background-color:green;display:block;"></view>
                 </l-progress>
             </view>
         </content-card>
