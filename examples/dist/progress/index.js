@@ -78,17 +78,16 @@ Component({
 
   lifetimes: {
     attached() {
-      const that = this
-      const query_slot = wx.createSelectorQuery().in(this)
-      query_slot.select('.slot').boundingClientRect(function (res) {
-        that.setData({
+      const querySlot = wx.createSelectorQuery().in(this)
+      querySlot.select('.slot').boundingClientRect(res => {
+        this.setData({
           _slotWidth: px2rpx(res.width),
           _slotHeight: px2rpx(res.height)
         })
       }).exec()
-      const query_progress = wx.createSelectorQuery().in(this)
-      query_progress.select('.progress').boundingClientRect(function (res) {
-        that.setData({
+      const queryProgress = wx.createSelectorQuery().in(this)
+      queryProgress.select('.progress').boundingClientRect(res => {
+        this.setData({
           _progressHeight: px2rpx(res.height),
           _progressWidth: px2rpx(res.width)
         })
