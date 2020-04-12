@@ -32,22 +32,28 @@
             </view>
         </content-card>
         <content-card l-content="content" name="显示数值">
-            <l-progress percent="20" show-info="{{true}}"></l-progress>
-            <l-progress percent="50" show-info="{{true}}" text-position="left"></l-progress>
-            <l-progress percent="50" show-info="{{true}}" text-color='red'></l-progress>
+            <view style="height:45rpx;">
+                <l-progress percent="20" show-info="{{true}}"></l-progress>
+            </view>
+            <view style="height:45rpx;">
+                <l-progress percent="50" show-info="{{true}}" text-position="left"></l-progress>
+            </view>
+            <view style="height:45rpx;">
+                <l-progress percent="50" show-info="{{true}}" text-color='red'></l-progress>
+            </view>
         </content-card>
         <content-card l-content="content" name="自定义header">
             <l-progress>
-                <view slot='header' style="width:50rpx;height:50rpx;border-radius:50%;background-color:red;display:block;"></view>
+                <view slot='header' style="width:25rpx;height:25rpx;border-radius:50%;background-color:red;display:block;"></view>
             </l-progress>
             <view style="margin-top:40rpx;">
                 <l-progress percent="50">
-                    <image src="imoji.jpg" slot='header' style="width:50rpx;height:50rpx;border-radius:50%;display:block;" />
+                    <image src="imoji.jpg" slot='header' style="width:30rpx;height:30rpx;border-radius:50%;display:block;" />
                 </l-progress>
             </view>
             <view style="margin-top:40rpx;">
                 <l-progress percent="100">
-                    <view slot='header' style="width:50rpx;height:50rpx;background-color:green;display:block;"></view>
+                    <view slot='header' style="width:25rpx;height:25rpx;background-color:green;display:block;"></view>
                 </l-progress>
             </view>
         </content-card>
