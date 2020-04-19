@@ -44,6 +44,14 @@ Component({
     interval: {
       type: Number,
       value: 20,
+    },
+    active: {
+      type: Boolean,
+      value: false
+    },
+    duration: {
+      type: Number,
+      value: 30
     }
   },
 
@@ -78,6 +86,12 @@ Component({
 
   lifetimes: {
     attached() {
+      if (this.data.percent > 100) {
+        this.setData({
+          percent: 100
+        })
+      }
+
       const querySlot = wx.createSelectorQuery().in(this)
       querySlot.select(".slot").boundingClientRect(res => {
         this.setData({
@@ -92,7 +106,20 @@ Component({
           _progressWidth: px2rpx(res.width)
         })
       }).exec()
-    }
+
+      let percent = this.data.percent
+      let now = 0
+      if (this.data.active) {
+        setInterval(() => {
+          if (now < percent) {
+            now += 1,
+              this.setData({
+                percent: now
+              })
+          }
+        }, this.data.duration);
+      }
+    },
   },
 
   /**
