@@ -142,6 +142,14 @@ Component({
         bubbles: true,
         composed: true
       });
+    },
+
+    /**
+     * 监听点击地址事件
+     * @param event
+     */
+    handleTapAddress(event){
+      this.triggerEvent('lintap',event.detail)
     }
   }
 });
