@@ -2,9 +2,9 @@
 <view class='container'>
     <content-title name="Progress" describe="进度条">
         <content-card l-content="content" name="基本使用方法">
-            <l-progress percent="20" active="{{true}}"></l-progress>
+            <l-progress percent="20"></l-progress>
             <view style="margin-top:10rpx;">
-                <l-progress active="{{true}}" duration="100" percent="50"></l-progress>
+                <l-progress percent="50"></l-progress>
             </view>
         </content-card>
         <content-card l-content="content" name="自定义宽度">
@@ -47,10 +47,20 @@
                 <view slot='header' style="width:25rpx;height:25rpx;border-radius:50%;background-color:red;display:block;"></view>
             </l-progress>
             <view style="margin-top:40rpx;">
-                <l-progress percent="50" active="{{true}}">
+                <l-progress percent="50">
                     <image src="imoji.jpg" slot='header' style="width:30rpx;height:30rpx;border-radius:50%;display:block;" />
                 </l-progress>
             </view>
+            <view style="margin-top:40rpx;">
+                <l-progress percent="100">
+                    <view slot='header' style="width:25rpx;height:25rpx;background-color:green;display:block;"></view>
+                </l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="动画">
+            <l-progress percent="50" active="{{true}}">
+                <view slot='header' style="width:25rpx;height:25rpx;border-radius:50%;background-color:red;display:block;"></view>
+            </l-progress>
             <view style="margin-top:40rpx;">
                 <l-progress percent="100" active="{{true}}">
                     <view slot='header' style="width:25rpx;height:25rpx;background-color:green;display:block;"></view>

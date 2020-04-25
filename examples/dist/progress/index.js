@@ -69,18 +69,23 @@ Component({
     _progressWidth: 0,
     _progressHeight: 0,
     _marginBottom: 0,
-    _marginLeft: 0,
-    _marginTop: 0,
+    marginLeft: 0,
+    marginTop: 0,
+    _useSlot: false,
   },
 
   observers: {
-    "_slotWidth, _slotHeight, _progressWidth, _progressHeight, percent": function (_slotWidth, _slotHeight, _progressWidth, _progressHeight, percent) {
-      const _marginTop = -(_slotHeight - _progressHeight) / 2
-      const _marginLeft = (_progressWidth - _slotWidth) * percent / 100
-      this.setData({
-        _marginTop,
-        _marginLeft
-      })
+    "_slotWidth, _slotHeight, _progressWidth, _progressHeight, percent,_useSlot": function (_slotWidth, _slotHeight, _progressWidth, _progressHeight, percent, _useSlot) {
+      if (_useSlot) {
+        const marginTop = -(_slotHeight - _progressHeight) / 2
+        const marginLeft = (_progressWidth - _slotWidth) * percent / 100
+        this.setData({
+          marginTop,
+          marginLeft
+        })
+      } else {
+        return
+      }
     }
   },
 
@@ -94,7 +99,12 @@ Component({
 
       const querySlot = wx.createSelectorQuery().in(this)
       querySlot.select(".slot").boundingClientRect(res => {
+        let _useSlot = this.data._useSlot
+        if (res.width) {
+          _useSlot = true
+        }
         this.setData({
+          _useSlot,
           _slotWidth: px2rpx(res.width),
           _slotHeight: px2rpx(res.height)
         })
@@ -112,10 +122,10 @@ Component({
       if (this.data.active) {
         setInterval(() => {
           if (now < percent) {
-            now += 1,
-              this.setData({
-                percent: now
-              })
+            now += 1
+            this.setData({
+              percent: now
+            })
           }
         }, this.data.duration);
       }
