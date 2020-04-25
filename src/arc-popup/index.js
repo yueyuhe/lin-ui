@@ -28,7 +28,7 @@ Component({
     // 顶部弧度
     arcRadius: {
       type: Number,
-      value: 10
+      value: 18
     },
     // 动画效果的显示和隐藏
     tranistion: {
@@ -57,8 +57,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    _arcRadiusTop: 30,
-    _ardRadiusBottom: 100,
+    _arcRadiusTop: 12,
+    _ardRadiusBottom: 18,
     _style: ''
   },
 
