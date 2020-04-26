@@ -1,7 +1,7 @@
 <l-popup 
   show="{{show}}" 
   direction="{{direction}}" 
-  tranistion="{{tranistion}}" 
+  transition="{{transition}}" 
   opacity="{{opacity}}"
   locked="{{locked}}" 
   z-index="{{zIndex}}" 
@@ -12,7 +12,7 @@
   <scroll-view 
     scroll-y="true" 
     class="content-arc-popup l-panel-class"
-    style="{{_style}}"
+    style="{{arcStyle}}"
   >
     <slot></slot>
   </scroll-view>

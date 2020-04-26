@@ -31,7 +31,7 @@ Component({
       value: 18
     },
     // 动画效果的显示和隐藏
-    tranistion: {
+    transition: {
       type: Boolean,
       value: true
     },
@@ -59,7 +59,7 @@ Component({
   data: {
     _arcRadiusTop: 12,
     _ardRadiusBottom: 18,
-    _style: ''
+    arcStyle: ''
   },
 
   /**
@@ -130,7 +130,7 @@ Component({
         min-height:${minHeight}rpx;
       `
       this.setData({
-        _style: style
+        arcStyle: style
       })
     },
     onArcPopupTap() {
