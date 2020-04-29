@@ -1,11 +1,9 @@
 // miniprogram_npm/lin-ui/album/index.js
-import validator from '../behaviors/validator';
 Component({
   /**
    * 组件的属性列表
    */
   externalClasses: ['l-class', 'l-single-image-class', 'l-multi-image-class'],
-  behaviors: [validator],
   properties: {
     urls: {
       type: Array
@@ -36,14 +34,12 @@ Component({
     // 单图显示模式
     singleMode: {
       type: String,
-      value: 'aspectFit',
-      options: ['scaleToFill', 'aspectFit', 'aspectFill', 'widthFix', 'heightFix', 'top', 'bottom', 'center', 'left', 'right', 'top left', 'top right', 'bottom left', 'bottom right']
+      value: 'aspectFit'
     },
     // 多图显示模式
     multipleMode: {
       type: String,
-      value: 'aspectFill',
-      options: ['scaleToFill', 'aspectFit', 'aspectFill', 'widthFix', 'heightFix', 'top', 'bottom', 'center', 'left', 'right', 'top left', 'top right', 'bottom left', 'bottom right']
+      value: 'aspectFill'
     },
     key: {
       type: String,

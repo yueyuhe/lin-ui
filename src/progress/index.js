@@ -1,13 +1,13 @@
 // components/progress/index.js
 import {
   px2rpx
-} from "../utils/util.js"
-import validator from "../behaviors/validator";
+} from '../utils/util.js';
+import validator from '../behaviors/validator';
 Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ["l-class", "l-text-class", "l-active-class", "l-background-class"],
+  externalClasses: ['l-class', 'l-text-class', 'l-active-class', 'l-background-class'],
   behaviors: [validator],
   properties: {
     percent: {
@@ -27,7 +27,7 @@ Component({
     },
     backgroundColor: {
       type: String,
-      value: "#EBEBEB",
+      value: '#EBEBEB',
     },
     showInfo: {
       type: Boolean,
@@ -35,8 +35,8 @@ Component({
     },
     textPosition: {
       type: String,
-      value: "right",
-      options: ["left", "right", "inner"]
+      value: 'right',
+      options: ['left', 'right']
     },
     textColor: {
       type: String,
@@ -75,16 +75,14 @@ Component({
   },
 
   observers: {
-    "_slotWidth, _slotHeight, _progressWidth, _progressHeight, percent,_useSlot": function (_slotWidth, _slotHeight, _progressWidth, _progressHeight, percent, _useSlot) {
+    '_slotWidth, _slotHeight, _progressWidth, _progressHeight, percent,_useSlot': function (_slotWidth, _slotHeight, _progressWidth, _progressHeight, percent, _useSlot) {
       if (_useSlot) {
-        const marginTop = -(_slotHeight - _progressHeight) / 2
-        const marginLeft = (_progressWidth - _slotWidth) * percent / 100
+        const marginTop = -(_slotHeight - _progressHeight) / 2;
+        const marginLeft = (_progressWidth - _slotWidth) * percent / 100;
         this.setData({
           marginTop,
           marginLeft
-        })
-      } else {
-        return
+        });
       }
     }
   },
@@ -94,38 +92,38 @@ Component({
       if (this.data.percent > 100) {
         this.setData({
           percent: 100
-        })
+        });
       }
 
-      const querySlot = wx.createSelectorQuery().in(this)
-      querySlot.select(".slot").boundingClientRect(res => {
-        let _useSlot = this.data._useSlot
+      const querySlot = wx.createSelectorQuery().in(this);
+      querySlot.select('.slot').boundingClientRect(res => {
+        let _useSlot = this.data._useSlot;
         if (res.width) {
-          _useSlot = true
+          _useSlot = true;
         }
         this.setData({
           _useSlot,
           _slotWidth: px2rpx(res.width),
           _slotHeight: px2rpx(res.height)
-        })
-      }).exec()
-      const queryProgress = wx.createSelectorQuery().in(this)
-      queryProgress.select(".progress").boundingClientRect(res => {
+        });
+      }).exec();
+      const queryProgress = wx.createSelectorQuery().in(this);
+      queryProgress.select('.progress').boundingClientRect(res => {
         this.setData({
           _progressHeight: px2rpx(res.height),
           _progressWidth: px2rpx(res.width)
-        })
-      }).exec()
+        });
+      }).exec();
 
-      let percent = this.data.percent
-      let now = 0
+      const percent = this.data.percent;
+      let now = 0;
       if (this.data.active) {
         setInterval(() => {
           if (now < percent) {
-            now += 1
+            now += 1;
             this.setData({
               percent: now
-            })
+            });
           }
         }, this.data.duration);
       }
@@ -136,4 +134,4 @@ Component({
    * 组件的方法列表
    */
   methods: {}
-})
+});
